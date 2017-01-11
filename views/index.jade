@@ -4,7 +4,9 @@ block content
 		.right-side
 			.tryingchars
 				| {{tryingChars}}
+			.dummychars
+				| _____
 		.left-side
 			.keyboards
-				.key(ng-repeat="key in keys track by $index" ng-click="tryThisChar(key)")
+				.key(ng-repeat="key in keys track by $index" ng-click="tryThisChar(key,$index)" ng-class="{keydisabled:keyStatus[$index]}")
 					| {{key}}

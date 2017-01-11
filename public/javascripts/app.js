@@ -24,7 +24,6 @@ angular.module('nepaliHangman',dependencies)
 
 		unicodeColumns.forEach(function(column){
 			unicodeRows.forEach(function(row){
-				// console.log('\u'+column.toString()+row.toString())
 				codes.push(eval("'\\u"+(column+row)+"'"));
 			})
 		})
@@ -32,9 +31,13 @@ angular.module('nepaliHangman',dependencies)
 		$scope.keys = codes;
 
 		$scope.tryingChars ='';
-
-		$scope.tryThisChar = function(char){
-			$scope.tryingChars = $scope.tryingChars +char;
+		$scope.keyStatus = [];
+		$scope.tryThisChar = function(char,index){
+			if(!$scope.keyStatus[index]){
+				$scope.keyStatus[index]=true;
+				$scope.tryingChars = $scope.tryingChars +char;
+			}
+			
 		}
 
 
