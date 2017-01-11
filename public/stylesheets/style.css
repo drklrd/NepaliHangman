@@ -1,0 +1,33 @@
+.container{
+	margin : 5%;
+}
+
+.left-side{
+	margin-left: 0%;
+}
+
+.left-side{
+	margin-left: 75%;
+}
+
+
+
+.key{
+	float: left;
+	border-radius: 5px;
+	padding: 7px;
+	background-color: grey;
+	margin : 3px;
+	cursor:  pointer;
+	width : 15px;
+	height: 15px;
+
+}
+
+.key:hover{
+	background-color: lightgrey;
+}
+
+.tryingchars{
+	font-size: 50px;
+}

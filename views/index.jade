@@ -1,0 +1,10 @@
+extends layout
+block content
+	.container
+		.right-side
+			.tryingchars
+				| {{tryingChars}}
+		.left-side
+			.keyboards
+				.key(ng-repeat="key in keys track by $index" ng-click="tryThisChar(key)")
+					| {{key}}

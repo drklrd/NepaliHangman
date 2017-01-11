@@ -1,0 +1,20 @@
+{
+  "name": "nepalihangman",
+  "description": "Nepali Hangman",
+  "main": "",
+  "authors": [
+    "drklrd <srvbhattarai@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1"
+  }
+}
