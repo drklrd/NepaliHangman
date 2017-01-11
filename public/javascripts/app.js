@@ -32,13 +32,17 @@ angular.module('nepaliHangman',dependencies)
 
 		$scope.tryingChars ='';
 		$scope.keyStatus = [];
+		$scope.word = 'कमल';
+
 		$scope.tryThisChar = function(char,index){
-			if(!$scope.keyStatus[index]){
-				$scope.keyStatus[index]=true;
+			if(!$scope.keyStatus[index] && $scope.keyStatus.reduce(function(a,b){return a+b;},0)<$scope.word.length){
+				$scope.keyStatus[index]=1;
 				$scope.tryingChars = $scope.tryingChars +char;
 			}
 			
 		}
+
+		
 
 
 	}])

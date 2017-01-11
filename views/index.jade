@@ -5,7 +5,8 @@ block content
 			.tryingchars
 				| {{tryingChars}}
 			.dummychars
-				| _____
+				.char(ng-repeat="char in word")
+					| _
 		.left-side
 			.keyboards
 				.key(ng-repeat="key in keys track by $index" ng-click="tryThisChar(key,$index)" ng-class="{keydisabled:keyStatus[$index]}")

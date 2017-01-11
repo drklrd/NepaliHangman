@@ -47,3 +47,7 @@
 .keydisabled{
 	background-color: lightgrey !important;
 }
+
+.char{
+	float: left;
+}
