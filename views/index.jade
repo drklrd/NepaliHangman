@@ -8,7 +8,7 @@ block content
 				.tryingchars
 					| {{tryingChars}}
 				.dummychars
-					.char(ng-repeat="char in word")
+					.char(ng-repeat="char in word track by $index")
 						| _
 			.left-side
 				.keyboards

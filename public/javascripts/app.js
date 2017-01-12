@@ -32,17 +32,25 @@ angular.module('nepaliHangman',dependencies)
 
 		$scope.tryingChars ='';
 		$scope.keyStatus = [];
-		$scope.word = 'कमल';
+		$scope.word = 'कमलकमलकमल';
+
+		var mistakes = 0;
+		var hanged = false;
 
 		$scope.tryThisChar = function(char,index){
-			if(!$scope.keyStatus[index] && $scope.keyStatus.reduce(function(a,b){return a+b;},0)<$scope.word.length){
+			if(!hanged && !$scope.keyStatus[index] && $scope.keyStatus.reduce(function(a,b){return a+b;},0)<$scope.word.length){
 				$scope.keyStatus[index]=1;
 				$scope.tryingChars = $scope.tryingChars +char;
+				drawHangMan(mistakes);
+				mistakes++;
 			}
+			
+			
 			
 		}
 
 
+		
 
 		var cx = document.getElementById("hangmandrawing").getContext("2d");
 
@@ -62,22 +70,49 @@ angular.module('nepaliHangman',dependencies)
 			drawPath([120,10],[120,30]);
 		})();
 
+
+		var hangManBody = [
+			function(){
+				cx.beginPath();
+				cx.arc(120,50,20,0,2*Math.PI);
+				cx.stroke();
+			},
+			function(){
+				drawPath([120,70],[100,100]);
+			},
+			function (){
+				drawPath([120,70],[140,100]);
+			},
+			function (){
+				drawPath([120,70],[120,130]);
+			},
+			function (){
+				drawPath([120,130],[100,160]);
+			},
+			function (){
+				drawPath([120,130],[140,160]);
+			}
+
+
+		];
+
 		
-		function drawHangMan(){
+		function drawHangMan(mistakes){
+			
 
-			cx.beginPath();
-			cx.arc(120,50,20,0,2*Math.PI);
-			cx.stroke();
+			hangManBody[mistakes]();
 
-			drawPath([120,70],[100,100]);
-			drawPath([120,70],[140,100]);
-			drawPath([120,70],[120,130]);
-			drawPath([120,130],[100,160]);
-			drawPath([120,130],[140,160]);
+			if(mistakes>= hangManBody.length-1){
+				hanged = true;
+			}
+
+
 
 		}
 
-		drawHangMan();
+
+
+
 
 		
 
