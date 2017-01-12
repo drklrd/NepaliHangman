@@ -42,6 +42,43 @@ angular.module('nepaliHangman',dependencies)
 			
 		}
 
+
+
+		var cx = document.getElementById("hangmandrawing").getContext("2d");
+
+		function drawPath(start,end){
+			cx.beginPath();
+			cx.moveTo(start[0], start[1]);
+			cx.lineTo(end[0], end[1]);
+			cx.closePath();
+			cx.stroke();
+
+		}
+
+		(function inIt(){
+
+			drawPath([50,190],[50,10]);
+			drawPath([30,10],[190,10]);
+			drawPath([120,10],[120,30]);
+		})();
+
+		
+		function drawHangMan(){
+
+			cx.beginPath();
+			cx.arc(120,50,20,0,2*Math.PI);
+			cx.stroke();
+
+			drawPath([120,70],[100,100]);
+			drawPath([120,70],[140,100]);
+			drawPath([120,70],[120,130]);
+			drawPath([120,130],[100,160]);
+			drawPath([120,130],[140,160]);
+
+		}
+
+		drawHangMan();
+
 		
 
 

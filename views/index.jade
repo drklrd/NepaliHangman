@@ -1,13 +1,16 @@
 extends layout
 block content
-	.container
-		.right-side
-			.tryingchars
-				| {{tryingChars}}
-			.dummychars
-				.char(ng-repeat="char in word")
-					| _
-		.left-side
-			.keyboards
-				.key(ng-repeat="key in keys track by $index" ng-click="tryThisChar(key,$index)" ng-class="{keydisabled:keyStatus[$index]}")
-					| {{key}}
+	section.paper
+		.container
+			.right-side
+				.hangman-drawing
+					canvas(id="hangmandrawing" width="200" height="200")
+				.tryingchars
+					| {{tryingChars}}
+				.dummychars
+					.char(ng-repeat="char in word")
+						| _
+			.left-side
+				.keyboards
+					.key(ng-repeat="key in keys track by $index" ng-click="tryThisChar(key,$index)" ng-class="{keydisabled:keyStatus[$index]}")
+						| {{key}}
