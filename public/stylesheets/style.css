@@ -41,24 +41,25 @@
   border-color: transparent #efe4e4;
 }
 
-.container{
-	margin : 5%;
+
+
+.right-side{
+  float: left;;
+	margin-left: 15%;
+  margin-top: 5%;
 }
 
 .left-side{
-	margin-left: 0%;
-}
-
-.left-side{
-	margin-left: 75%;
+	margin-left: 65%;
 }
 
 
 
 .key{
+  font-size: 30px;
 	float: left;
 	border-radius: 5px;
-	padding: 7px;
+	padding: 15px;
 	background-color: grey;
 	margin : 3px;
 	cursor:  pointer;
@@ -80,9 +81,9 @@
 
 .tryingchars{
 	position: absolute;
-	top : 50%;
+	top : 51%;
 	left: 25%;
-	letter-spacing: 7px;
+	/*letter-spacing: 7px;*/
 	font-size: 50px;
 }
 
@@ -91,7 +92,7 @@
 	top: 55%;
 	left: 25%;
 	font-size: 50px;
-	letter-spacing: 7px;
+	/*letter-spacing: 7px;*/
 }
 
 .keydisabled{
@@ -100,4 +101,17 @@
 
 .char{
 	float: left;
+  margin : 10px;
+}
+
+
+.hangman-drawing{
+  float: left;
+}
+
+
+.defination{
+  position: relative;
+  top: 40px;
+  font-size: 22px;
 }
